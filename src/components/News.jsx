@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NewsItem from './NewsItem'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-function News({setProgress , category, apiKey}) {
+function News({setProgress , category}) {
     const [articles, setArticles] = useState([])
     const [page , setPage] = useState(1)
     const [totalResults , setTotalResults] = useState(null)
@@ -10,7 +10,7 @@ function News({setProgress , category, apiKey}) {
     const fetchData = async () => {
         setProgress(10)
         const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=us&page=${page}&category=${category}&apiKey=${apiKey}`
+          `https://newsapi.org/v2/top-headlines?country=us&page=${page}&category=${category}&apiKey=c433ad42761747dcb1d177a6756765ba`
         );
         setProgress(40)
         const parseData = await response.json()
@@ -35,7 +35,7 @@ function News({setProgress , category, apiKey}) {
         const response = await fetch(
           `https://newsapi.org/v2/top-headlines?country=us&page=${
             page + 1
-          }&category=${category}&apiKey=${apiKey}`
+          }&category=${category}&apiKey=c433ad42761747dcb1d177a6756765ba`
         );
         
         setPage(page + 1)
