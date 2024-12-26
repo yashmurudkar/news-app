@@ -4,14 +4,13 @@ import News from "./components/News";
 import LoadingBar from "react-top-loading-bar";
 import { useState } from "react";
 import.meta.env.REACT_APP_NEWS_API;
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 
 function App() {
   const [progress, setProgress] = useState(0);
   // const apiKey = import.meta.env.REACT_APP_NEWS_API
   return (
     <>
-      <Router>
         <Navbar />
         <LoadingBar color="#f11946" progress={progress} height={3} />
         <Routes>
@@ -96,7 +95,6 @@ function App() {
             }
           ></Route>
         </Routes>
-      </Router>
     </>
   );
 }
